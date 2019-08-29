@@ -1,0 +1,14 @@
+{
+    "id": "rnvSpecial",
+    "extend": "helloWorld",
+    "common": {
+        "id": "com.faros.faros-rnv",
+        "title": "Faros"
+    },
+    "platforms": {
+        "ios": {
+            "scheme": "RNVAppRelease",
+            "runScheme": "Release"
+        }
+    }
+}
