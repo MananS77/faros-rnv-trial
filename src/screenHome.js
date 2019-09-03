@@ -4,6 +4,8 @@ import { Icon, Button, Api, TIZEN} from 'renative';
 import config from '../platformAssets/renative.runtime.json';
 import packageJson from '../package.json';
 import Theme from './theme';
+import DeviceInfo from 'react-native-device-info';
+
 
 const styles = StyleSheet.create({
     appContainerScroll: {
@@ -68,6 +70,7 @@ class ScreenHome extends React.Component {
         const styleButton = isWear ? styles.buttonWear : styles.button;
         const SelectedView = isWear ? View : ScrollView;
         const title = `${config.common.title}!`;
+        const serialNumber = DeviceInfo.getSerialNumber();
 
         return (
             <SelectedView
@@ -88,6 +91,9 @@ v
                 </Text>
                 <Text style={styles.textH3}>
                     {`platform: ${Api.platform}`}
+                </Text>
+                <Text style={styles.textH3}>
+                    {`serialNumber: ${serialNumber}`}
                 </Text>
 
                 <Button
